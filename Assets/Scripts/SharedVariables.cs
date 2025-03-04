@@ -11,18 +11,22 @@ using UnityEngine.Events;
 public class SharedVariables : MonoBehaviour
 {
     public static SharedVariables Instance;
-    public long receivedTimestamp = 0;
+    // public long receivedTimestamp = 0;
 
-    private bool isRunning = true;
+    // private bool isRunning = true;
 
     public bool quitApp = false;
 
-    private UdpClient udpClient;
-    private Thread udpThread;
+    // private UdpClient udpClient;
+    // private Thread udpThread;
 
     private InputAction triggerAction;
 
-    public UnityEvent<bool> SavePointCloudDataEvent;
+    // public UnityEvent<bool> SavePointCloudDataEvent;
+
+    public long timestampOffset;
+
+    public bool timestampOffsetComputed = false;
 
 
     public void Awake()
@@ -39,17 +43,19 @@ public class SharedVariables : MonoBehaviour
     void Start()
     {
         // Initialize UDP receiver
+        /*
         udpClient = new UdpClient(5555); // Use port 5555 for receiving timestamps
         udpThread = new Thread(new ThreadStart(ReceiveTimestamps));
         udpThread.IsBackground = true;
         udpThread.Start();
+        */
 
         // Initialize input actions for trigger button
         triggerAction = new InputAction(binding: "<MagicLeapController>/trigger");
         triggerAction.Enable();
 
     }
-
+    /*
     private void ReceiveTimestamps()
     {
         try
@@ -71,6 +77,8 @@ public class SharedVariables : MonoBehaviour
         }
     }
 
+    */
+
     // Update is called once per frame
     void Update()
     {
@@ -79,11 +87,11 @@ public class SharedVariables : MonoBehaviour
             quitApp = true;
         }
 
-        if (quitApp)
-        {
-            SavePointCloudDataEvent.Invoke(true);
-        }
-        quitApp = false;
+        // if (quitApp)
+        // {
+        //     SavePointCloudDataEvent.Invoke(true);
+        // }
+        // quitApp = false;
 
 
     }
@@ -91,10 +99,10 @@ public class SharedVariables : MonoBehaviour
     void OnDestroy()
     {
         // Clean up resources on destroy
-        udpThread?.Abort();
-        udpClient?.Close();
+        // udpThread?.Abort();
+        // udpClient?.Close();
 
-        isRunning = false;
+        // isRunning = false;
         triggerAction.Disable();
     }
 }

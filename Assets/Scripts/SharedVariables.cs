@@ -17,6 +17,15 @@ public class SharedVariables : MonoBehaviour
 
     public bool quitApp = false;
 
+    public string serverIP = "192.168.1.1";
+    public int serverPort = 12345;
+    public int receivePort = 54321;
+
+    public string ftpUsername = "i3tlab";
+    public string ftpPassword = "iotlab443";
+    public int ftpPort = 21;
+
+
     // private UdpClient udpClient;
     // private Thread udpThread;
 
@@ -24,9 +33,13 @@ public class SharedVariables : MonoBehaviour
 
     // public UnityEvent<bool> SavePointCloudDataEvent;
 
-    public long timestampOffset;
+    public double timestampOffset = 0;
 
     public bool timestampOffsetComputed = false;
+
+    public bool stopCapture = false;
+
+    public string uploadFileName = "test_file.csv";
 
 
     public void Awake()
@@ -84,6 +97,7 @@ public class SharedVariables : MonoBehaviour
     {
         if (triggerAction.ReadValue<float>() > 0.5f)
         {
+            Debug.Log("BetaTest: Trigger pressed");
             quitApp = true;
         }
 

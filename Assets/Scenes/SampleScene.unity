@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &296833627
 Transform:
   m_ObjectHideFlags: 0
@@ -361,6 +361,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1418243607, guid: fe799b2d0a84dfe43b001b56276fd2fb, type: 3}
+      propertyPath: m_DirectionalAnchorRotationAction.m_Action.m_Id
+      value: b09d4c13-d58b-4f34-bb10-98d9ed2907b0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1418243607, guid: fe799b2d0a84dfe43b001b56276fd2fb, type: 3}
+      propertyPath: m_DirectionalAnchorRotationAction.m_Action.m_Name
+      value: Directional Anchor Rotation
+      objectReference: {fileID: 0}
     - target: {fileID: 5589497133593145648, guid: fe799b2d0a84dfe43b001b56276fd2fb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -415,6 +423,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: XR Rig
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169045109616253027, guid: fe799b2d0a84dfe43b001b56276fd2fb,
+        type: 3}
+      propertyPath: m_TrackingStateInput.m_Action.m_Id
+      value: dd1cfa07-42e8-4bbf-aac0-7e65e474d1b7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169045109616253027, guid: fe799b2d0a84dfe43b001b56276fd2fb,
+        type: 3}
+      propertyPath: m_TrackingStateInput.m_Action.m_Name
+      value: Tracking State Input
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -536,7 +554,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1558573982}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f1095be854400594093d371c4737e7b7, type: 3}
   m_Name: 
@@ -676,9 +694,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d39d621599227148b8f9833ba46b83a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverIP: 192.168.1.1
-  serverPort: 12345
-  receivePort: 54321
 --- !u!4 &1632377057
 Transform:
   m_ObjectHideFlags: 0
@@ -724,8 +739,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quitApp: 0
+  serverIP: 10.197.190.79
+  serverPort: 6666
+  receivePort: 8888
+  ftpUsername: i3tlab
+  ftpPassword: iotlab443
+  ftpPort: 21
   timestampOffset: 0
   timestampOffsetComputed: 0
+  stopCapture: 0
+  uploadFileName: device_trajectory_logs/test_file.csv
 --- !u!4 &1752760309
 Transform:
   m_ObjectHideFlags: 0
